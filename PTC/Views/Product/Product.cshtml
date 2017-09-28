@@ -1,0 +1,14 @@
+﻿@using PTC.ViewModelLayer
+@model ProductViewModel
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(m => m.EventAction,
+                            new { data_val = "false" })
+    @Html.Partial("_ProductSearch", Model)
+    @Html.Partial("_ProductList", Model)
+}
+@section scripts {
+    <script type="text/javascript"
+            src="~/Scripts/pdsa-action.js">
+    </script>
+}

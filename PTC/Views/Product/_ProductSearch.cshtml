@@ -1,0 +1,29 @@
+﻿@using PTC.ViewModelLayer
+@model ProductViewModel
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h1 class="panel-title">Search for Products</h1>
+    </div>
+    <div class="panel-body">
+        <div class="form-group">
+            @Html.LabelFor(m => m.SearchEntity.ProductName,
+            "Product Name")
+            @Html.TextBoxFor(m => m.SearchEntity.ProductName,
+            new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="panel-footer">
+        <button id="btnSearch"
+                class="btn btn-sm btn-primary"
+                data-pdsa-action="search">
+            <i class="glyphicon glyphicon-search"></i>
+            &nbsp;Search
+        </button>
+        <button id="btnReset"
+                class="btn btn-sm btn-primary"
+                data-pdsa-action="resetsearch">
+            <i class="glyphicon glyphicon-share-alt"></i>
+            &nbsp;Reset
+        </button>
+    </div>
+</div>
