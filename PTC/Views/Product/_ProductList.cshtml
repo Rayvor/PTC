@@ -11,6 +11,8 @@
                 <th>Introduction Date</th>
                 <th>Url</th>
                 <th>Price</th>
+                <th>Edit</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -24,6 +26,21 @@
                     <td>@item.Url</td>
                     <td>
                         @Convert.ToDecimal(item.Price).ToString("c")
+                    </td>
+                    <td>
+                        <a href="#" data-pdsa-action="edit"
+                                    data-pdsa-arg="@item.ProductId"
+                                    class="btn btn-default btn-sm">
+                            <i class="glyphicon glyphicon-edit"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" data-pdsa-action="delete"
+                                    data-pdsa-arg="@item.ProductId"
+                                    data-pdsa-deletelabel="Product"
+                                    class="btn btn-default btn-sm">
+                           <i class="glyphicon glyphicon-trash"></i>
+                        </a>
                     </td>
                 </tr>
             }

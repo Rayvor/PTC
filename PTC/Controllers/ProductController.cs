@@ -25,11 +25,15 @@ namespace PTC.Controllers
         [HttpPost]
         public ActionResult Product(ProductViewModel vm)
         {
-            // Handle action by user
-            vm.HandleRequest();
-            // Rebind controls
-            ModelState.Clear();
-
+            if (vm.EventAction != "cancel")
+                vm.IsValid = ModelState.IsValid;
+            if (vm.IsValid)
+            {
+                // Handle action by user
+                vm.HandleRequest();
+                // Rebind controls
+                ModelState.Clear();
+            }
             return View(vm);
         }
     }

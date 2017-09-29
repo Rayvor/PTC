@@ -1,11 +1,26 @@
-﻿@using PTC.ViewModelLayer
+﻿@{
+    ViewBag.Title = "Products";
+}
+@using PTC.ViewModelLayer
 @model ProductViewModel
 @using (Html.BeginForm())
 {
     @Html.HiddenFor(m => m.EventAction,
-                            new { data_val = "false" })
-    @Html.Partial("_ProductSearch", Model)
-    @Html.Partial("_ProductList", Model)
+                                    new { data_val = "false" })
+    @Html.HiddenFor(m => m.PageMode,
+                                    new { data_val = "false" })
+    @Html.HiddenFor(m => m.EventArgument,
+                                    new { data_val = "false"})
+    if (Model.PageMode == PDSAPageModeEnum.List)
+    {
+        @Html.Partial("_ProductSearch", Model)
+        @Html.Partial("_ProductList", Model)
+    }
+    if (Model.PageMode == PDSAPageModeEnum.Add ||
+        Model.PageMode == PDSAPageModeEnum.Edit)
+    { 
+        @Html.Partial("_ProductDetail", Model)
+    }
 }
 @section scripts {
     <script type="text/javascript"

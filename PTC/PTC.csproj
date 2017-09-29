@@ -193,6 +193,7 @@
     <Content Include="Views\Product\Product.cshtml" />
     <Content Include="Views\Product\_ProductSearch.cshtml" />
     <Content Include="Views\Product\_ProductList.cshtml" />
+    <Content Include="Views\Product\_ProductDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
