@@ -10,15 +10,11 @@ namespace PTC.DataLayer
     public partial class Product
     {
         public int ProductId { get; set; }
-
-        [Required]
-        [StringLength(150)]
+        
         public string ProductName { get; set; }
 
         public DateTime IntroductionDate { get; set; }
-
-        [Required]
-        [StringLength(255)]
+        
         public string Url { get; set; }
 
         [Column(TypeName = "money")]
